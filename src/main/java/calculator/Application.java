@@ -6,8 +6,15 @@ public class Application {
 
     public static void main(String[] args) {
         // TODO: 프로그램 구현
-        // TODO: Console을 이용한 입출력 구현
+        System.out.println("덧셈할 문자열을 입력해 주세요.");
         var input = Console.readLine();
-        System.out.println("input = " + input);
+        int result = 0;
+        if (input.contains(",") || input.contains(":")) {
+            var split = input.split("([,:])");
+            for (String s : split) {
+                result += Integer.parseInt(s);
+            }
+        }
+        System.out.println("결과 : " + result);
     }
 }
