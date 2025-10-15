@@ -20,7 +20,6 @@ public final class Parser {
         Delimiters delimiters = new Delimiters();
         var parsedExpression = getParsedExpression(input, delimiters);
         return filterExpression(splitExpression(parsedExpression, delimiters), delimiters);
-
     }
 
     public static String getParsedExpression(String expression, Delimiters delimiters) {
