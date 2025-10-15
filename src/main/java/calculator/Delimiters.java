@@ -5,10 +5,8 @@ import java.util.List;
 
 public class Delimiters {
 
-    private final static String FIRST_DELIMITER = ",";
-    private final static String SECOND_DELIMITER = ":";
 
-    private static final List<String> BASIC_DELIMITERS = List.of(FIRST_DELIMITER, SECOND_DELIMITER);
+    private static final List<String> BASIC_DELIMITERS = List.of(",", ":");
 
     private final List<String> delimiters;
 
