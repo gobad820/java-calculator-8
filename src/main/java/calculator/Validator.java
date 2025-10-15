@@ -36,7 +36,7 @@ public final class Validator {
 
     public static void validateCustomDelimiters(String input) {
         if (input.startsWith("//")) {
-            throw new IllegalArgumentException("커스텀 구분자가 누락되었습니다.");
+            throw new IllegalArgumentException("커스텀 구분자의 입력이 형식에 맞지 않습니다.");
         }
     }
 }
