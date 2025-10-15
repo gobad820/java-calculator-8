@@ -14,8 +14,8 @@ public class Application {
             System.out.println(OUTPUT_DIALOGUE + 0);
             return;
         }
-        var parsedStringExpressions = Parser.parse(input);
-        var values = Converter.convertStringToInteger(parsedStringExpressions);
+        var parsedStrings = Parser.parse(input);
+        var values = Converter.convertStringToInteger(parsedStrings);
         Validator.validateValues(values);
         System.out.println(OUTPUT_DIALOGUE + SumCalculator.getSum(values));
     }
