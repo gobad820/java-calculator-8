@@ -27,11 +27,15 @@ public final class Validator {
     }
 
     private static boolean validateNumberAndDelimiter(String trimmed, List<String> delimiters) {
-        if (trimmed.chars().anyMatch(
-            c -> !isDigit((char) c) && !delimiters.contains(Character.toString((char) c)))) {
+        if (isANonDigitOrNonDelimiter(trimmed, delimiters)) {
             throw new IllegalArgumentException("입력은 기본 구분자(',', ':') 커스텀 구분자 그리고 자연수로 구성된 문자열입니다.");
         }
         return true;
+    }
+
+    private static boolean isANonDigitOrNonDelimiter(String trimmed, List<String> delimiters) {
+        return trimmed.chars().anyMatch(
+            c -> !isDigit((char) c) || !delimiters.contains(Character.toString((char) c)));
     }
 
     public static void validateCustomDelimiters(String input) {
